@@ -4,6 +4,9 @@
      docker: # it uses the docker executor
        - image: circleci/node:10 # specifically, a docker image with ruby 2.4.1
      # Steps are a list of commands to run inside the docker container above.
+     branches:
+         only:
+            - master
      steps:
        - run: echo "A first hello" # This prints "A first hello" to stdout.
        - run: npm -v # a command telling the job to "sleep" for 25 seconds.
