@@ -15,8 +15,8 @@
        - run: echo "A first hello" # This prints "A first hello" to stdout.
        - run: npm -v # a command telling the job to "sleep" for 25 seconds.
        - run:
-         name: Install
-         command: npm install
+          name: Install
+          command: npm install
        - run:
-         name: Build
-         command: npm run build
+          name: Build
+          command: npm run build
