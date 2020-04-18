@@ -31,5 +31,5 @@
           # 执行shell脚本
           command:chmod +x scripts/deploy.sh
        - run:
-          name:Run Deploy to GitHub Pages
-          command:./scripts/deploy.sh
+          name: Run Deploy to GitHub Pages
+          command: ./scripts/deploy.sh
