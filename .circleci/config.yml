@@ -12,11 +12,24 @@
           fingerprints:
             - "07:75:9c:8d:d3:3e:68:92:23:db:3b:f0:70:bf:4a:6d"
        - checkout
-       - run: echo "A first hello" # This prints "A first hello" to stdout.
-       - run: npm -v # a command telling the job to "sleep" for 25 seconds.
+       - restore_cache:
+          keys:
+            - dependencies_imooc
        - run:
           name: Install
           command: npm install
+       - save_cache:
+          paths:
+            - node_modules
+          key: dependencies_imooc
        - run:
           name: Build
           command: npm run build
+       - run:
+          name:Prepare shell commands
+          # shell chmod +x 赋予执行权限
+          # 执行shell脚本
+          command:chmod +x scripts/deploy.sh
+       - run:
+          name:Run Deploy to GitHub Pages
+          command:./scripts/deploy.sh
