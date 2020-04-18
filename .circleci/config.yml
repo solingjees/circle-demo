@@ -8,9 +8,9 @@
          only:
             - master
      steps:
-       - add_ssh_keys:
-          fingerprints:
-            - "07:75:9c:8d:d3:3e:68:92:23:db:3b:f0:70:bf:4a:6d"
+      #  - add_ssh_keys:
+      #     fingerprints:
+      #       - "07:75:9c:8d:d3:3e:68:92:23:db:3b:f0:70:bf:4a:6d"
        - checkout
        - run: echo "A first hello" # This prints "A first hello" to stdout.
        - run: npm -v # a command telling the job to "sleep" for 25 seconds.
